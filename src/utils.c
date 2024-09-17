@@ -6,7 +6,7 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:52:59 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 11:53:00 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:19:12 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,17 @@ double	maximum(double x, double y)
 	else
 		return (y);
 	return (0);
+}
+
+void	pixel_put(t_image *img, int x, int y, int color)
+{
+	char	*dst;
+
+	if (x >= 0 && x < img->line_length / (img->bits_per_pixel / 8) && y >= 0
+		&& y < img->line_length / (img->bits_per_pixel / 8))
+	{
+		dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel
+					/ 8));
+		*(unsigned int *)dst = color;
+	}
 }

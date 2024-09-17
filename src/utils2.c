@@ -6,7 +6,7 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:53:57 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 12:02:48 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:23:00 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,10 @@ int	coor_y(double y, t_fdf *data)
 	return ((int)round(y));
 }
 
-void	pixel_put(t_image *img, int x, int y, int color)
+void	set_coordinates(int fd, t_coords *map, t_fdf *data)
 {
-	char	*dst;
-
-	if (x >= 0 && x < img->line_length / (img->bits_per_pixel / 8) && y >= 0
-		&& y < img->line_length / (img->bits_per_pixel / 8))
-	{
-		dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel
-					/ 8));
-		*(unsigned int *)dst = color;
-	}
-}
-
-void set_coordinates(int fd, t_coords *map, t_fdf *data)
-{
-	char *line;
-	int y;
+	char	*line;
+	int		y;
 
 	if (fd < 0)
 		error(FILE_ERROR);
@@ -62,6 +49,7 @@ void set_coordinates(int fd, t_coords *map, t_fdf *data)
 		free(map[y]);
 	map[y] = NULL;
 }
+
 void	apply_zoom(t_coords *a, t_coords *b, t_fdf *data)
 {
 	a->x *= data->scale;
