@@ -6,15 +6,15 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:09:08 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 12:09:09 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:44:18 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
+# define WIN_WIDTH 3840
+# define WIN_HEIGHT 2160
 # define INPUT_ERROR "Wrong number of arguments\n"
 # define FORMAT_ERROR "wrong map format: ./fdf map.fdf\n"
 # define FILE_ERROR "Error opening file\n"

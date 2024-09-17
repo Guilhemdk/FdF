@@ -26,7 +26,7 @@ void	transfo_coords(t_coords *a, t_coords *b, t_fdf *data)
 	b->y += data->shift_y;
 }
 
-void	draw_pixels(t_coords a, t_coords b, t_coords current)
+void	draw_pixels(t_coords a, t_coords b, t_coords current, t_fdf *data)
 {
 	double	step_x;
 	double	step_y;
@@ -56,15 +56,12 @@ void	draw_pixels(t_coords a, t_coords b, t_coords current)
 
 void	draw_line(t_coords a, t_coords b, t_fdf *data)
 {
-	double		step_x;
-	double		step_y;
-	double		max;
 	t_coords	current;
 
 	transfo_coords(&a, &b, data);
 	current.x = a.x;
 	current.y = a.y;
-	draw_pixels(a, b, current);
+	draw_pixels(a, b, current, data);
 }
 
 void	image_to_window(t_fdf *data)

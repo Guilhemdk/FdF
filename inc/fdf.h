@@ -6,7 +6,7 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:12:14 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 12:12:15 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:39:12 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void		pixel_put(t_image *img, int x, int y, int color);
 int			coor_y(double y, t_fdf *data);
 int			coor_x(double x, t_fdf *data);
 
-void		set_coordinates(int fd, t_coords *map, t_fdf *data);
+void		set_coordinates(int fd, t_coords **map, t_fdf *data);
 void		apply_iso(t_coords *axis, double angle);
 void		apply_zoom(t_coords *a, t_coords *b, t_fdf *data);
 

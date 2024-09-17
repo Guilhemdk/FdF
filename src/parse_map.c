@@ -6,7 +6,7 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:00:31 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 12:00:32 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:37:25 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_coords	**parse_map(char *filename, t_fdf *data)
 
 	fd = open(filename, O_RDONLY);
 	map = malloc_map(filename, data);
-	set_coordinates(fd, &map, &data);
+	set_coordinates(fd, map, data);
 	close(fd);
 	return (map);
 }

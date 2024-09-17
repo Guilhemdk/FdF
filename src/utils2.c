@@ -6,7 +6,7 @@
 /*   By: gmiorcec <guilhemmdk@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:53:57 by gmiorcec          #+#    #+#             */
-/*   Updated: 2024/09/17 12:23:00 by gmiorcec         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:38:10 by gmiorcec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	coor_y(double y, t_fdf *data)
 	return ((int)round(y));
 }
 
-void	set_coordinates(int fd, t_coords *map, t_fdf *data)
+void	set_coordinates(int fd, t_coords **map, t_fdf *data)
 {
 	char	*line;
 	int		y;
